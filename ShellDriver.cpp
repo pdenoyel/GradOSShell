@@ -1,5 +1,4 @@
 #include <iostream>
-#include <windows.h>
 
 using namespace std;
 
@@ -15,11 +14,14 @@ int main() {
 	cout << "Driver Program\n";
 	cout << PLATFORM_NAME;
 	if (PLATFORM_NAME == "windows") {
-		ShellExecute(NULL, "open", "C:\\WindowsShell.exe", NULL, NULL, SW_SHOWDEFAULT);
+		cout << "\nLaunching Windows Shell\n";
+		system("C:\\Users\\pdeno\\source\\repos\\WindowsShell\\Debug\\WindowsShell.exe");
 	}
 	else if (PLATFORM_NAME == "unix") {
-		ShellExecute(NULL, "open", "C:\\LinuxShell.exe", NULL, NULL, SW_SHOWDEFAULT);
+		cout << "\nLaunching Unix Shell\n";
+		system("./LinuxShell");
 	}
+	system("pause");
 
 	return 0;
 }
