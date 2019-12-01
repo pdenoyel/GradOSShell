@@ -32,6 +32,7 @@ int main(){
 
 #if (defined(linux) || defined(__APPLE__))
 	system("clear");
+	system("cd ~")
 #else
 	system("cls");
 	_chdir("c:\\");
