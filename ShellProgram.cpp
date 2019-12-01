@@ -11,7 +11,7 @@
 #include <signal.h>
 #include <string>
 
-#if (defined(linux) || defined(APPLE))
+#if (defined(linux) || defined(__APPLE__))
 #include <sys/wait.h>
 #include <unistd.h>
 #endif
@@ -53,7 +53,7 @@ int main(){
 	cin.getline(command, 128);//getting input from user
 	
 	if (strlen(command) == 0) {//user pressed enter
-#if (defined(linux) || defined(APPLE))
+#if (defined(linux) || defined(__APPLE__))
 		system("\n");
 		break;
 #endif
