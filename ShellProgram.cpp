@@ -11,14 +11,14 @@
 #include <signal.h>
 #include <string>
 
-#if defined(linux) || defined(APPLE)
+#if (defined(linux) || defined(APPLE))
 #include <sys/wait.h>
 #include <unistd.h>
 #endif
 using namespace std;
 
 void inception() {
-#if defined(linux) || defined(__APPLE__)
+#if (defined(linux) || defined(__APPLE__))
 	system("clear");
 #else
 	system("cls");
@@ -30,7 +30,7 @@ void inception() {
 int main(){
 	bool isInceptionMode = false;
 
-#if defined(linux) || defined(__APPLE__)
+#if (defined(linux) || defined(__APPLE__))
 	system("clear");
 #else
 	system("cls");
@@ -53,7 +53,7 @@ int main(){
 	cin.getline(command, 128);//getting input from user
 	
 	if (strlen(command) == 0) {//user pressed enter
-#if defined(linux) || defined(APPLE)
+#if (defined(linux) || defined(APPLE))
 		system("\n");
 		break;
 #endif
@@ -61,7 +61,7 @@ int main(){
 	}
 
 
-#if defined(linux) || defined(__APPLE__)
+#if (defined(linux) || defined(__APPLE__))
 	else{//text entered
 		vector<char*> args;
 		string testString(command);
