@@ -1,5 +1,5 @@
 #include <iostream>
-#ifndef unix
+#ifdef win32
 #include <direct.h>
 #endif
 #include <sstream>
@@ -11,14 +11,14 @@
 #include <signal.h>
 #include <string>
 
-#ifdef unix
+#if defined(linux) || defined(APPLE)
 #include <sys/wait.h>
 #include <unistd.h>
 #endif
 using namespace std;
 
 void inception() {
-#ifdef unix
+#if defined(linux) || defined(APPLE)
 	system("clear");
 #else
 	system("cls");
@@ -30,10 +30,10 @@ void inception() {
 int main(){
 	bool isInceptionMode = false;
 
-#ifdef unix
+#if defined(linux) || defined(APPLE)
 	system("clear");
 #endif
-#ifndef unix
+#ifdef win32
 	system("cls");
 	_chdir("c:\\");
 #endif
@@ -54,7 +54,7 @@ int main(){
 	cin.getline(command, 128);//getting input from user
 	
 	if (strlen(command) == 0) {//user pressed enter
-#ifdef unix
+#if defined(linux) || defined(APPLE)
 		system("\n");
 		break;
 #endif
@@ -62,7 +62,7 @@ int main(){
 	}
 
 
-#ifdef unix
+#if defined(linux) || defined(APPLE)
 	else{//text entered
 		vector<char*> args;
 		string testString(command);
@@ -127,7 +127,7 @@ int main(){
 			}//else
 		}//else cd
 		}//else no text
-#else
+#elif defined(win32)
 		stringstream substring(command);
 		string singleWord;
 		getline(substring, singleWord, ' ');
