@@ -95,7 +95,7 @@ int main(){
 					chdir("/");
 				else
 					chdir(argv[1]);
-				perror(command);
+				//perror(command);
 			}
 
 			else if(testString.find(">")!=-1
