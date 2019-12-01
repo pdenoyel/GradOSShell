@@ -1,5 +1,5 @@
 #include <iostream>
-#ifdef win32
+#if !defined(linux) && !defined(APPLE)
 #include <direct.h>
 #endif
 #include <sstream>
@@ -127,7 +127,7 @@ int main(){
 			}//else
 		}//else cd
 		}//else no text
-#elif defined(win32)
+#else
 		stringstream substring(command);
 		string singleWord;
 		getline(substring, singleWord, ' ');
