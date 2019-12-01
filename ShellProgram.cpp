@@ -1,5 +1,5 @@
 #include <iostream>
-#if !defined(linux) && !defined(APPLE)
+#if (!defined(linux) && !defined(__APPLE__))
 #include <direct.h>
 #endif
 #include <sstream>
@@ -18,7 +18,7 @@
 using namespace std;
 
 void inception() {
-#if defined(linux) || defined(APPLE)
+#if defined(linux) || defined(__APPLE__)
 	system("clear");
 #else
 	system("cls");
@@ -30,10 +30,9 @@ void inception() {
 int main(){
 	bool isInceptionMode = false;
 
-#if defined(linux) || defined(APPLE)
+#if defined(linux) || defined(__APPLE__)
 	system("clear");
-#endif
-#ifdef win32
+#else
 	system("cls");
 	_chdir("c:\\");
 #endif
@@ -62,7 +61,7 @@ int main(){
 	}
 
 
-#if defined(linux) || defined(APPLE)
+#if defined(linux) || defined(__APPLE__)
 	else{//text entered
 		vector<char*> args;
 		string testString(command);
