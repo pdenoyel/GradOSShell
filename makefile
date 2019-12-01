@@ -1,5 +1,5 @@
-myshell : linuxShell.o
-	gcc -o myshell linuxShell.c
+ShellProgram : ShellProgram.o
+	g++ -o ShellProgram ShellProgram.cpp
 
 clean :
-	rm *.o myshell.exe
+	rm *.o ShellProgram.exe
