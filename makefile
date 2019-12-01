@@ -1,5 +1,5 @@
-ShellProgram : ShellProgram.o
-	g++ -o ShellProgram ShellProgram.cpp
+projectshell : ShellProgram.o
+	g++ -o projectshell ShellProgram.cpp
 
 clean :
-	rm *.o ShellProgram.exe
+	rm *.o projectshell.exe
